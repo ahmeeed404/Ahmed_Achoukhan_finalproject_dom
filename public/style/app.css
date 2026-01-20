@@ -26,7 +26,6 @@ nav {
   justify-content: space-between;
   height: 10vh;
   align-items: center;
-
 }
 .navBttn {
   height: 35px;
@@ -172,6 +171,10 @@ i {
   padding: 35px;
   height: 15vh;
 }
+.leftContent span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
 .rightAbout {
   display: flex;
   flex-direction: column;
@@ -247,11 +250,9 @@ i {
   gap: 20px;
 }
 
-
 .whyContent .firstCard {
   width: 33%;
 }
-
 
 .whyContent .secondCard,
 .whyContent .thirdCard,
@@ -277,7 +278,7 @@ i {
   border: transparent;
   background: rgb(214, 54, 54);
   height: 35px;
-  color:white;
+  color: white;
   width: 8vw;
 }
 .whyContent i {
@@ -285,12 +286,11 @@ i {
   height: 70px;
   border: 1px solid #eee;
   border-radius: 50%;
-  display: flex;              
+  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  background-color:#eee ;
- 
+  background-color: #eee;
 }
 
 /* state */
@@ -303,9 +303,7 @@ i {
   background-repeat: no-repeat;
   position: relative;
   display: flex;
- 
 }
-
 
 .states::before {
   content: "";
@@ -324,13 +322,11 @@ i {
   color: white;
 }
 
-
 .statesContent h3 {
   font-size: 48px;
   margin-bottom: 5px;
   font-weight: 700;
 }
-
 
 .statesContent p {
   font-size: 16px;
@@ -343,7 +339,6 @@ i {
   padding: 60px 0;
   background-color: #fff;
 }
-
 
 .topMenu {
   text-align: center;
@@ -358,19 +353,16 @@ i {
 
 .topMenu h2 {
   font-size: 42px;
-
 }
 
 .topMenu span {
   color: rgb(207, 19, 19);
 }
 
-
 .menuContent {
   text-align: center;
   margin-bottom: 40px;
 }
-
 
 .menuTypes {
   display: flex;
@@ -399,13 +391,11 @@ i {
   bottom: -5px;
 }
 
-
 .menuContent > div p {
   font-weight: 600;
   letter-spacing: 2px;
   margin-bottom: 20px;
 }
-
 
 .menuImages {
   display: grid;
@@ -414,17 +404,14 @@ i {
   text-align: center;
 }
 
-
 .menuImages div {
   padding: 20px;
 }
-
 
 .menuImages img {
   width: 200px;
   margin-bottom: 15px;
 }
-
 
 .menuImages p:first-of-type {
   font-weight: 700;
@@ -432,13 +419,11 @@ i {
   margin-bottom: 5px;
 }
 
-
 .menuImages p:nth-of-type(2) {
   color: #6c757d;
   font-size: 14px;
   margin-bottom: 10px;
 }
-
 
 .menuImages span {
   font-size: 20px;
@@ -462,9 +447,11 @@ i {
   font-size: 14px;
 }
 
-.topTestimonials h2, h4, span {
+.topTestimonials h2,
+h4,
+span {
   font-size: 42px;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
 }
 
 .topTestimonials span {
@@ -475,7 +462,6 @@ i {
   display: flex;
   align-items: flex-start;
   padding: 40px;
-
 }
 
 .testimonialText {
@@ -514,7 +500,7 @@ i {
 .stars {
   display: flex;
   gap: 5px;
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 .stars i {
@@ -533,23 +519,22 @@ i {
   object-fit: cover;
 }
 /* events */
-.events{
+.events {
   width: 100%;
-  overflow: hidden;          
+  overflow: hidden;
   margin: 0;
   padding: 0;
   margin-top: 50px;
 }
 
-.eventContent{
+.eventContent {
   display: grid;
   grid-template-columns: repeat(4, 33.3333%);
   height: 420px;
   gap: 3px;
 }
 
-
-.eventContent > div{
+.eventContent > div {
   position: relative;
   height: 100%;
   background-size: cover;
@@ -561,41 +546,34 @@ i {
   color: #fff;
 }
 
-.eventContent > div::before{
+.eventContent > div::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.25)
-  );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
   z-index: 0;
 }
 
-
-.eventContent > div p{
+.eventContent > div p {
   position: relative;
   z-index: 1;
   margin: 0;
 }
 
-
-.eventContent > div p:first-child{
+.eventContent > div p:first-child {
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 8px;
   font-family: "Amatic SC", cursive;
 }
 
-
-.eventContent > div p:nth-child(2){
+.eventContent > div p:nth-child(2) {
   font-size: 36px;
   font-weight: 500;
   margin-bottom: 12px;
   position: relative;
 }
-.eventContent > div p:nth-child(2)::after{
+.eventContent > div p:nth-child(2)::after {
   content: "";
   display: block;
   width: 80px;
@@ -604,12 +582,11 @@ i {
   margin-top: 8px;
 }
 
-.eventContent > div p:last-child{
+.eventContent > div p:last-child {
   font-size: 14px;
- 
 }
 
-.eventContent > div{
+.eventContent > div {
   transition: transform 0.4s ease;
 }
 
@@ -629,7 +606,7 @@ i {
 
 .topChef h2 {
   font-size: 42px;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-weight: 700;
 }
 
@@ -637,13 +614,10 @@ i {
   color: rgb(207, 19, 19);
 }
 
-
 .rowChef {
   display: flex;
   gap: 25px;
 }
-
-
 
 .chefs .member {
   position: relative;
@@ -658,12 +632,10 @@ i {
   transform: translateY(-10px);
 }
 
-
 .chefs .member img {
   width: 100%;
   display: block;
 }
-
 
 .chefs .member-info {
   padding: 25px 20px;
@@ -688,7 +660,6 @@ i {
   color: #666;
 }
 
-
 .chefs .social {
   position: absolute;
   top: 25px;
@@ -709,15 +680,12 @@ i {
 
   transition: color 0.3s ease;
 }
-.chefs .social i{
-    
-    color: rgb(82, 82, 82);
+.chefs .social i {
+  color: rgb(82, 82, 82);
 }
 .chefs .social a:hover {
   color: gray;
-  
 }
-
 
 .chefs .member:hover .social {
   right: 15px;
@@ -745,7 +713,7 @@ i {
 
 .topBook h2 {
   font-size: 42px;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-weight: 700;
 }
 
@@ -817,7 +785,7 @@ i {
 .gallery {
   text-align: center;
   margin-bottom: 50px;
-    background-color: #f7f7f7;
+  background-color: #f7f7f7;
   padding: 60px 0;
 }
 
@@ -827,20 +795,21 @@ i {
   font-size: 14px;
 }
 
-.topGallery h2,  span {
+.topGallery h2,
+span {
   font-size: 42px;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
 }
 
 .topGallery span {
   color: rgb(207, 19, 19);
 }
-.galleryImages{
-    display: flex;
+.galleryImages {
+  display: flex;
 }
-.galleryImages img{
-    width: 15vw;
-    height: 25vh;
+.galleryImages img {
+  width: 15vw;
+  height: 25vh;
 }
 /* CONTATC */
 
@@ -856,9 +825,10 @@ i {
   font-size: 14px;
 }
 
-.topContact h2, span {
+.topContact h2,
+span {
   font-size: 42px;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
 }
 
 .topContact span {
@@ -869,7 +839,6 @@ i {
   background: #fff;
   padding: 30px;
 }
-
 
 .firstForm,
 .secondForm {
@@ -902,7 +871,6 @@ i {
   flex-shrink: 0;
 }
 
-
 .firstForm > div p,
 .secondForm > div p {
   margin: 0;
@@ -927,7 +895,6 @@ i {
   flex-direction: column;
   gap: 20px;
 }
-
 
 .thirdForm > div:first-child {
   display: flex;
@@ -957,12 +924,10 @@ i {
   min-height: 150px;
 }
 
-
 .thirdForm input:focus,
 .thirdForm textarea:focus {
   border-color: #ce1212;
 }
-
 
 .thirdForm button {
   background: #ce1212;
@@ -978,15 +943,6 @@ i {
 .thirdForm button:hover {
   background: #b01010;
 }
-
-
-
-
-
-
-
-
-
 
 /* footer */
 footer {
@@ -1045,30 +1001,64 @@ footer .downFooter {
   opacity: 0.8;
 }
 
-@media (max-width: 425px) {
-  footer .topFotter {
-    flex-direction: column;
-    gap: 25px;
-    align-items: flex-start;
-  }
-  footer .topFotter > div {
-    width: 100%;
-    gap: 12px;
-  }
-  footer .topFotter i {
-    font-size: 26px;
-  }
-  footer .media {
-    flex-direction: column !important;
-    gap: 10px;
-  }
-  footer .media a i {
-    font-size: 24px;
-  }
-  footer .downFooter {
-    margin-top: 25px;
-    font-size: 14px;
-    text-align: center;
-    padding-top: 15px;
-  }
+/** modal style
+/*  */
+.mediaModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.mediaModal.active {
+  display: flex;
+}
+
+.mediaBox {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.media-content img{
+  width: 50vw;
+  height: 80vh;
+}
+.media-content iframe {
+  width: 70vw;
+  height: 80vh;
+  border-radius: 8px;
+}
+
+.mediaBox .media-close  i{
+  position: absolute;
+  /* /* top: 10px; */
+  right: -30vw; 
+  width: 20vw;
+  font-size: 28px;
+  color: #4f0303;
+  cursor: pointer;
+}
+
+.media-prev,
+.media-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: red;
+  cursor: pointer;
+}
+
+.media-prev {
+  left: -13vw;
+}
+.media-next {
+  right: -13vw;
 }
