@@ -693,7 +693,7 @@ i {
   position: absolute;
   top: 25px;
   right: -50px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(165, 161, 161);
   padding: 10px 8px;
   border-radius: 8px;
   display: flex;
@@ -706,10 +706,12 @@ i {
 .chefs .social a {
   font-size: 18px;
   color: #555;
+
   transition: color 0.3s ease;
 }
 .chefs .social i{
-    color: gray;
+    
+    color: rgb(82, 82, 82);
 }
 .chefs .social a:hover {
   color: gray;
@@ -723,3 +725,350 @@ i {
   visibility: visible;
 }
 
+/* book */
+
+.book {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.topBook {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.topBook p {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #9aa0a6;
+}
+
+.topBook h2 {
+  font-size: 42px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+}
+
+.topBook h2 span {
+  color: #ce1212;
+}
+
+.bookWrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: #f7f7f7;
+}
+
+.bookImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bookForm {
+  padding: 40px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.bookForm input,
+.bookForm textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.bookForm input:focus,
+.bookForm textarea:focus {
+  border-color: #ce1212;
+}
+
+.bookForm textarea {
+  grid-column: 1 / -1;
+  height: 120px;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.bookForm button {
+  display: block;
+  margin: auto;
+  background: #ce1212;
+  color: #fff;
+  padding: 12px 35px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bookForm button:hover {
+  background: #b01010;
+}
+/* gallery */
+
+.gallery {
+  text-align: center;
+  margin-bottom: 50px;
+    background-color: #f7f7f7;
+  padding: 60px 0;
+}
+
+.topGallery p {
+  color: #9aa0a6;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.topGallery h2,  span {
+  font-size: 42px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.topGallery span {
+  color: rgb(207, 19, 19);
+}
+.galleryImages{
+    display: flex;
+}
+.galleryImages img{
+    width: 15vw;
+    height: 25vh;
+}
+/* CONTATC */
+
+.contact {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 60px 0;
+}
+
+.topContact p {
+  color: #9aa0a6;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.topContact h2, span {
+  font-size: 42px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.topContact span {
+  color: rgb(207, 19, 19);
+}
+
+.contactFormul {
+  background: #fff;
+  padding: 30px;
+}
+
+
+.firstForm,
+.secondForm {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.firstForm > div,
+.secondForm > div {
+  background: #f8f9fa;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 50%;
+}
+
+.firstForm i,
+.secondForm i {
+  font-size: 18px;
+  color: #ce1212;
+  background: #fceaea;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+.firstForm > div p,
+.secondForm > div p {
+  margin: 0;
+}
+
+.firstForm > div p:nth-of-type(1),
+.secondForm > div p:nth-of-type(1) {
+  font-size: 15px;
+  font-weight: 700;
+  color: #37373f;
+}
+
+.firstForm > div p:nth-of-type(2),
+.secondForm > div p:nth-of-type(2) {
+  font-size: 14px;
+  color: #6c757d;
+  line-height: 1.4;
+}
+
+.thirdForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.thirdForm > div:first-child {
+  display: flex;
+  gap: 20px;
+}
+
+.thirdForm > div:first-child input {
+  width: 50%;
+}
+
+.thirdForm > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.thirdForm input,
+.thirdForm textarea {
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  font-size: 14px;
+  font-family: inherit;
+  width: 100%;
+}
+
+.thirdForm textarea {
+  min-height: 150px;
+}
+
+
+.thirdForm input:focus,
+.thirdForm textarea:focus {
+  border-color: #ce1212;
+}
+
+
+.thirdForm button {
+  background: #ce1212;
+  color: #fff;
+  border: none;
+  padding: 12px 36px;
+  font-size: 14px;
+  border-radius: 50px;
+  align-self: center;
+  transition: 0.3s;
+}
+
+.thirdForm button:hover {
+  background: #b01010;
+}
+
+
+
+
+
+
+
+
+
+
+/* footer */
+footer {
+  background: rgb(31, 31, 36);
+  color: white;
+  padding: 60px 0 20px 0;
+  margin-top: 5vw;
+}
+footer .topFotter {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgb(207, 19, 19);
+}
+footer .topFotter > div {
+  display: flex;
+  gap: 15px;
+}
+footer .topFotter i {
+  font-size: 30px;
+  color: rgb(207, 19, 19);
+}
+footer .topFotter .footertext p:first-child {
+  font-family: "pacifico", serif;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+footer .topFotter .footertext p:last-child {
+  opacity: 0.9;
+  line-height: 1.5;
+}
+footer .topFotter .media {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+footer .topFotter .media a {
+  margin-right: 10px;
+}
+footer .topFotter .media i {
+  font-size: 28px;
+  transition: 0.3s;
+}
+footer .topFotter .media i:hover {
+  transform: scale(1.1);
+}
+footer .downFooter {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+@media (max-width: 425px) {
+  footer .topFotter {
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+  }
+  footer .topFotter > div {
+    width: 100%;
+    gap: 12px;
+  }
+  footer .topFotter i {
+    font-size: 26px;
+  }
+  footer .media {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+  footer .media a i {
+    font-size: 24px;
+  }
+  footer .downFooter {
+    margin-top: 25px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 15px;
+  }
+}
