@@ -1,14 +1,15 @@
-let modal = document.getElementById("mediaModal");
-let mediaContent = modal.querySelector(".media-content");
-let closeBtn = modal.querySelector(".media-close");
-let prevBtn = modal.querySelector(".media-prev");
-let nextBtn = modal.querySelector(".media-next");
 let videoButton = document.querySelector(".heroSection .rightBttn button");
-let videoLink = "https://www.youtube.com/embed/Y7f98aduVJ8";
+let aboutVideoButton = document.querySelector(".aboutSection .vedio button");
 let menuImages = document.querySelectorAll(".menuImages img");
 let galleryImages = document.querySelectorAll(".galleryImages img");
 let allImages = [...menuImages, ...galleryImages];
+let modal = document.getElementById("mediaModal");
+const mediaContent = modal.querySelector(".media-content");
+let closeBtn = modal.querySelector(".media-close");
+let prevBtn = modal.querySelector(".media-prev");
+let nextBtn = modal.querySelector(".media-next");
 
+let videoLink = "https://www.youtube.com/embed/Y7f98aduVJ8";
 let currentIndex = -1; 
 let isVideo = true;
 
@@ -18,7 +19,6 @@ function openModal() {
   renderContent();
   modal.classList.add("active");
 }
-
 
 function renderContent() {
   if (currentIndex === -1) {
@@ -54,7 +54,6 @@ function showNext() {
   renderContent();
 }
 
-
 function closeModal() {
   modal.classList.remove("active");
   mediaContent.innerHTML = "";
@@ -62,6 +61,17 @@ function closeModal() {
 
 
 videoButton.addEventListener("click", openModal);
+aboutVideoButton.addEventListener("click", openModal);
+
+allImages.forEach((img, i) => {
+  img.addEventListener("click", function() {
+    currentIndex = i;
+    isVideo = false;
+    renderContent();
+    modal.classList.add("active");
+  });
+});
+
 closeBtn.addEventListener("click", closeModal);
 modal.addEventListener("click", function(e) {
   if (e.target === modal) closeModal();
