@@ -300,3 +300,22 @@ menuTabs.forEach((tab, index) => {
 });
 
 menuTabs[0].classList.add("active");
+// ** navbar
+const bars = document.querySelector(".bars");
+const closeNav = document.querySelector(".closeNav");
+const navLinks = document.querySelector(".navlinks");
+
+bars.addEventListener("click", () => {
+  navLinks.classList.add("open");
+  closeNav.style.display = "block";
+  bars.style.display = "none";
+  document.body.style.overflow = "hidden"; 
+});
+
+closeNav.addEventListener("click", () => {
+  navLinks.classList.remove("open");
+  closeNav.style.display = "none";
+  bars.style.display = "block";
+  document.body.style.overflow = "auto";
+});
+
