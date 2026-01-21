@@ -209,3 +209,64 @@ setInterval(() => {
     updateCarousel();
 }, 2500);
 
+// ** book reserve
+let reservationModal = document.getElementById('reservationBook');
+let closeModalBtn = document.querySelector('.bookContent .close');
+let reservationForm = document.getElementById('bookForm'); 
+let bookTableBtn = document.querySelector('.navBttn'); 
+let bookHeroBtn = document.querySelector('.leftBttn');
+
+// ** Array to store reservations
+let reservations = [];
+
+bookTableBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  reservationModal.style.display = 'flex';
+});
+bookHeroBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  reservationModal.style.display = 'flex';
+});
+
+closeModalBtn.addEventListener('click', () => {
+  reservationModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === reservationModal) {
+    reservationModal.style.display = 'none';
+  }
+});
+
+reservationForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let formData = {
+    fullName: document.getElementById('Name').value,
+    foodOption: document.getElementById('foodType').value,
+    startTime: document.getElementById('reservStart').value,
+    endTime: document.getElementById('reservEnd').value,
+    numPeople: document.getElementById('peopleNumber').value
+  };
+
+  // ** Check for conflict
+  let conflict = reservations.some(r => 
+    r.foodOption === formData.foodOption && 
+    ((formData.startTime >= r.startTime && formData.startTime < r.endTime) || 
+     (formData.endTime > r.startTime && formData.endTime <= r.endTime) ||
+     (formData.startTime <= r.startTime && formData.endTime >= r.endTime))
+  );
+
+  if (conflict) {
+    alert("This time is already reserved. Please choose a different");
+    return; 
+  }
+
+  // ** Save reservation
+  reservations.push(formData);
+  console.log('Reservation Data:', formData);
+  alert('Reservation submitted successfully!');
+
+  reservationForm.reset();
+  reservationModal.style.display = 'none';
+});
