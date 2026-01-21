@@ -220,102 +220,120 @@ setInterval(() => {
 // ** book reserve
 let reservationModal = document.getElementById('reservationBook');
 let closeModalBtn = document.querySelector('.bookContent .close');
-let reservationForm = document.getElementById('bookForm'); 
-let bookTableBtn = document.querySelector('.navBttn'); 
+let reservationForm = document.getElementById('bookForm');
+let bookTableBtn = document.querySelector('.navBttn');
 let bookHeroBtn = document.querySelector('.leftBttn');
 let bookBttn = document.getElementById('#bookBttn');
 let reservations = [];
 
 bookTableBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  reservationModal.style.display = 'flex';
+    e.preventDefault();
+    reservationModal.style.display = 'flex';
 });
 bookHeroBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  reservationModal.style.display = 'flex';
+    e.preventDefault();
+    reservationModal.style.display = 'flex';
 });
 
 closeModalBtn.addEventListener('click', () => {
-  reservationModal.style.display = 'none';
+    reservationModal.style.display = 'none';
 });
 
 window.addEventListener('click', (e) => {
-  if (e.target === reservationModal) {
-    reservationModal.style.display = 'none';
-  }
+    if (e.target === reservationModal) {
+        reservationModal.style.display = 'none';
+    }
 });
 
 reservationForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  let formData = {
-    fullName: document.getElementById('Name').value,
-    foodOption: document.getElementById('foodType').value,
-    startTime: document.getElementById('reservStart').value,
-    endTime: document.getElementById('reservEnd').value,
-    numPeople: document.getElementById('peopleNumber').value
-  };
+    let formData = {
+        fullName: document.getElementById('Name').value,
+        foodOption: document.getElementById('foodType').value,
+        startTime: document.getElementById('reservStart').value,
+        endTime: document.getElementById('reservEnd').value,
+        numPeople: document.getElementById('peopleNumber').value
+    };
 
 
-  let conflict = reservations.some(r => 
-    r.foodOption === formData.foodOption && 
-    ((formData.startTime >= r.startTime && formData.startTime < r.endTime) || 
-     (formData.endTime > r.startTime && formData.endTime <= r.endTime) ||
-     (formData.startTime <= r.startTime && formData.endTime >= r.endTime))
-  );
+    let conflict = reservations.some(r =>
+        r.foodOption === formData.foodOption &&
+        ((formData.startTime >= r.startTime && formData.startTime < r.endTime) ||
+            (formData.endTime > r.startTime && formData.endTime <= r.endTime) ||
+            (formData.startTime <= r.startTime && formData.endTime >= r.endTime))
+    );
 
-  if (conflict) {
-    alert("This time is already reserved. Please choose a different");
-    return; 
-  }
-  // ** Save reservation
-  reservations.push(formData);
-  console.log('Reservation Data:', formData);
-  alert('Reservation submitted successfully!');
+    if (conflict) {
+        alert("This time is already reserved. Please choose a different");
+        return;
+    }
+    // ** Save reservation
+    reservations.push(formData);
+    console.log('Reservation Data:', formData);
+    alert('Reservation submitted successfully!');
 
-  reservationForm.reset();
-  reservationModal.style.display = 'none';
+    reservationForm.reset();
+    reservationModal.style.display = 'none';
 });
 // * menu
 let menuTabs = document.querySelectorAll(".menuTypes p");
 let menuItems = document.querySelectorAll(".menuImages > div");
 
 menuTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => {
+    tab.addEventListener("click", () => {
 
-    menuTabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
+        menuTabs.forEach(t =>
+            t.classList.remove("active"))
+            ;
+        tab.classList.add("active");
 
-    menuItems.forEach((item, i) => {
+        menuItems.forEach(item =>
+            item.style.display = "none"
+        );
 
-      if (index === 0) {
-        item.style.display = "block";
-      } 
-      else {
-        item.style.display = i < 2 ? "block" : "none";
-      }
+        if (index === 0) {
+            menuItems.forEach(item =>
+                item.style.display = "block"
+            );
+        }
+
+        if (index === 1) {
+            menuItems[0].style.display = "block";
+            menuItems[1].style.display = "block";
+        }
+
+        if (index === 2) {
+            menuItems[2].style.display = "block";
+            menuItems[3].style.display = "block";
+        }
+
+        if (index === 3) {
+            menuItems[4].style.display = "block";
+            menuItems[5].style.display = "block";
+        }
 
     });
-  });
 });
 
 menuTabs[0].classList.add("active");
+
 // ** navbar
 const bars = document.querySelector(".bars");
 const closeNav = document.querySelector(".closeNav");
 const navLinks = document.querySelector(".navlinks");
 
 bars.addEventListener("click", () => {
-  navLinks.classList.add("open");
-  closeNav.style.display = "block";
-  bars.style.display = "none";
-  document.body.style.overflow = "hidden"; 
+    navLinks.classList.add("open");
+    closeNav.style.display = "block";
+    bars.style.display = "none";
+    document.body.style.overflow = "hidden";
 });
 
 closeNav.addEventListener("click", () => {
-  navLinks.classList.remove("open");
-  closeNav.style.display = "none";
-  bars.style.display = "block";
-  document.body.style.overflow = "auto";
+    navLinks.classList.remove("open");
+    closeNav.style.display = "none";
+    bars.style.display = "block";
+    document.body.style.overflow = "auto";
 });
 
