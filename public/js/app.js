@@ -276,3 +276,27 @@ reservationForm.addEventListener('submit', (e) => {
   reservationForm.reset();
   reservationModal.style.display = 'none';
 });
+// * menu
+let menuTabs = document.querySelectorAll(".menuTypes p");
+let menuItems = document.querySelectorAll(".menuImages > div");
+
+menuTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+
+    menuTabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    menuItems.forEach((item, i) => {
+
+      if (index === 0) {
+        item.style.display = "block";
+      } 
+      else {
+        item.style.display = i < 2 ? "block" : "none";
+      }
+
+    });
+  });
+});
+
+menuTabs[0].classList.add("active");

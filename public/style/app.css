@@ -387,14 +387,14 @@ i {
 }
 
 .menuTypes p {
-  font-weight: 600;
-  color: #555;
-  position: relative;
+  cursor: pointer;
 }
+
 .menuTypes p.active {
   color: red;
   text-decoration: underline;
 }
+
 
 .menuContent > div p {
   font-weight: 600;
@@ -1367,105 +1367,3 @@ footer .downFooter {
 }
 
 /* *version tablet */
-/* ===== TABLET VERSION ===== */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-
-  /* container */
-  .container {
-    max-width: 95%;
-  }
-
-  /* nav */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 9vh;
-    background: white;
-    z-index: 999;
-  }
-
-  nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-  }
-
-  nav a {
-    margin: 0 8px;
-    font-size: 14px;
-  }
-
-  .navBttn {
-    width: 120px;
-    height: 35px;
-    font-size: 14px;
-  }
-
-  /* hero */
-  .heroContent {
-    gap: 30px;
-  }
-
-  .rightHero img {
-    max-width: 40vw;
-  }
-
-  /* about */
-  .downAbout {
-    grid-template-columns: 1fr;
-  }
-
-  .leftAbout img,
-  .leftContent {
-    width: 100%;
-    height: auto;
-  }
-
-  /* why us */
-  .whyContent {
-    flex-wrap: wrap;
-  }
-
-  .whyContent > div {
-    width: 48%;
-  }
-
-  .whyContent .firstCard {
-    width: 100%;
-  }
-
-  /* menu */
-  .menuImages {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* events */
-  .eventContent {
-    grid-template-columns: repeat(2, 1fr);
-    height: auto;
-  }
-
-  /* chefs */
-  .rowChef {
-    flex-wrap: wrap;
-  }
-
-  .chefs .member {
-    width: 48%;
-  }
-
-  /* contact */
-  .firstForm,
-  .secondForm {
-    flex-direction: row;
-  }
-
-  .firstForm > div,
-  .secondForm > div {
-    width: 50%;
-  }
-
-}
