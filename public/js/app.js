@@ -85,61 +85,85 @@ nextBtn.addEventListener("click", showNext);
 // ** carousel of tetimonials
 let cards = document.querySelectorAll(".testimonialCard");
 let testimonialsSection = document.querySelector(".testimonials .container");
+let testimonialCircles = document.createElement("div");
 
-let circles = document.createElement("div");
-circles.style.display = "flex";
-circles.style.justifyContent = "center";
-circles.style.gap = "10px";
-circles.style.marginTop = "25px";
-
-testimonialsSection.appendChild(circles);
+testimonialCircles.style.display = "flex";
+testimonialCircles.style.justifyContent = "center";
+testimonialCircles.style.gap = "10px";
+testimonialCircles.style.marginTop = "25px";
+testimonialsSection.appendChild(testimonialCircles);
 
 let index = 0;
-
-cards.forEach(card => {
-    card.style.display = "none";
-});
-
+cards.forEach(card => card.style.display = "none");
 
 cards[0].style.display = "flex";
-
-
-cards.forEach((_, i) => {
-    const dot = document.createElement("span");
+cards.forEach((card, i) => {
+    let dot = document.createElement("span");
     dot.style.width = "12px";
     dot.style.height = "12px";
     dot.style.borderRadius = "50%";
-    dot.style.background = "#ccc";
-    dot.style.cursor = "pointer";
-
-    if (i === 0) dot.style.background = "red";
-
+    dot.style.background = i === 0 ? "red" : "#ccc";
     dot.addEventListener("click", () => {
         index = i;
         showCard();
     });
-
-    circles.appendChild(dot);
+    testimonialCircles.appendChild(dot);
 });
 
-let dots = circles.querySelectorAll("span");
-
+let dots = testimonialCircles.querySelectorAll("span");
 function showCard() {
-    cards.forEach(card =>
-        card.style.display = "none");
-    dots.forEach(dot =>
-        dot.style.background = "#ccc");
-
+    cards.forEach(c => c.style.display = "none");
+    dots.forEach(d => d.style.background = "#ccc");
     cards[index].style.display = "flex";
     dots[index].style.background = "red";
 }
 
-
 setInterval(() => {
-    index++;
-    if (index >= cards.length) {
-        index = 0;
-    }
+    index = (index + 1) % cards.length;
     showCard();
 }, 4000);
 
+// ** events carousel
+let events = document.querySelectorAll(".eventContent > div");
+let visible = 3;
+let start = 0;
+let total = events.length;
+
+events.forEach(e => e.style.display = "none");
+
+let eventCircles = document.createElement("div");
+eventCircles.style.display = "flex";
+eventCircles.style.justifyContent = "center";
+eventCircles.style.gap = "10px";
+eventCircles.style.marginTop = "25px";
+document.querySelector(".events").appendChild(eventCircles);
+
+for (let i = 0; i < total; i++) {
+    let dot = document.createElement("span");
+    dot.style.width = "12px";
+    dot.style.height = "12px";
+    dot.style.borderRadius = "50%";
+    dot.style.background = i === 0 ? "red" : "#ccc";
+    dot.style.cursor = "pointer";
+    dot.addEventListener("click", () => {
+        start = i;
+        showEvents();
+    });
+    eventCircles.appendChild(dot);
+}
+
+let eventDots = eventCircles.querySelectorAll("span");
+
+function showEvents() {
+    events.forEach(e => e.style.display = "none");
+    eventDots.forEach(d => d.style.background = "#ccc");
+    for (let i = 0; i < visible; i++) {
+        events[(start + i) % total].style.display = "flex";
+    }
+    eventDots[start % total].style.background = "red";
+}
+
+showEvents();
+setInterval(() => {
+    start++; showEvents();
+}, 4000);
