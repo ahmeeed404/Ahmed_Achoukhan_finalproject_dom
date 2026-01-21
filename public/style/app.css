@@ -44,7 +44,7 @@ nav a {
   margin: 0 15px;
 }
 
-a::after {
+nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -804,13 +804,30 @@ span {
 .topGallery span {
   color: rgb(207, 19, 19);
 }
+
 .galleryImages {
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+
 }
+
+.galleryImages div {
+  position: absolute;
+  transition: all 0.7s ease;
+}
+
 .galleryImages img {
-  width: 15vw;
-  height: 25vh;
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
 }
+
+/*  */
+
 /* CONTATC */
 
 .contact {
@@ -1062,3 +1079,6 @@ footer .downFooter {
 .media-next {
   right: -13vw;
 }
+
+
+

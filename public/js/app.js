@@ -112,8 +112,12 @@ cards.forEach((card, i) => {
 
 let dots = testimonialCircles.querySelectorAll("span");
 function showCard() {
-    cards.forEach(c => c.style.display = "none");
-    dots.forEach(d => d.style.background = "#ccc");
+    cards.forEach(c =>
+        c.style.display = "none"
+    );
+    dots.forEach(d =>
+        d.style.background = "#ccc"
+    );
     cards[index].style.display = "flex";
     dots[index].style.background = "red";
 }
@@ -129,14 +133,18 @@ let visible = 3;
 let start = 0;
 let total = events.length;
 
-events.forEach(e => e.style.display = "none");
+events.forEach(e =>
+    e.style.display = "none");
+
+let eventt = document.querySelector(".events")
 
 let eventCircles = document.createElement("div");
 eventCircles.style.display = "flex";
 eventCircles.style.justifyContent = "center";
 eventCircles.style.gap = "10px";
 eventCircles.style.marginTop = "25px";
-document.querySelector(".events").appendChild(eventCircles);
+
+eventt.appendChild(eventCircles);
 
 for (let i = 0; i < total; i++) {
     let dot = document.createElement("span");
@@ -155,8 +163,12 @@ for (let i = 0; i < total; i++) {
 let eventDots = eventCircles.querySelectorAll("span");
 
 function showEvents() {
-    events.forEach(e => e.style.display = "none");
-    eventDots.forEach(d => d.style.background = "#ccc");
+    events.forEach(e =>
+        e.style.display = "none"
+    );
+    eventDots.forEach(d =>
+        d.style.background = "#ccc"
+    );
     for (let i = 0; i < visible; i++) {
         events[(start + i) % total].style.display = "flex";
     }
@@ -167,3 +179,34 @@ showEvents();
 setInterval(() => {
     start++; showEvents();
 }, 4000);
+// **carouselof gallery 
+let slides = document.querySelectorAll(".galleryImages div");
+let activeIndex = 2;
+
+function updateCarousel() {
+    slides.forEach((slide, index) => {
+        let offset = index - activeIndex;
+
+
+        if (offset > slides.length / 2) offset -= slides.length;
+        if (offset < -slides.length / 2) offset += slides.length;
+
+        slide.style.transform = `
+      translateX(${offset * 300}px)
+      scale(${offset === 0 ? 1.2 : 0.9})
+    `;
+
+        slide.style.zIndex = offset === 0 ? 3 : 1;
+        slide.style.opacity = Math.abs(offset) > 2 ? 0 : 1;
+    });
+}
+
+updateCarousel();
+
+setInterval(() => {
+    activeIndex = (activeIndex + 1) % slides.length;
+    updateCarousel();
+}, 2500);
+
+
+// ** book
