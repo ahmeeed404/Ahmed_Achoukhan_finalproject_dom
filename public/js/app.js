@@ -10,7 +10,7 @@ let closeBtn = modal.querySelector(".media-close");
 let prevBtn = modal.querySelector(".media-prev");
 let nextBtn = modal.querySelector(".media-next");
 
-let videoLink = "https://www.youtube.com/embed/Y7f98aduVJ8";
+let videoLink = "https://youtu.be/Y7f98aduVJ8";
 let currentIndex = -1;
 let isVideo = true;
 
@@ -179,6 +179,7 @@ showEvents();
 setInterval(() => {
     start++; showEvents();
 }, 4000);
+
 // **carouselof gallery 
 let slides = document.querySelectorAll(".galleryImages div");
 let activeIndex = 2;
@@ -208,5 +209,3 @@ setInterval(() => {
     updateCarousel();
 }, 2500);
 
-
-// ** book

@@ -11,13 +11,13 @@
 /* fonts */
 body,
 p,
-a {
+a{
   font-family: "Open Sans", sans-serif;
 }
 h1,
 h2 {
   font-family: "Amatic SC", cursive;
-  font-size: 65px;
+  font-size: 50px;
 }
 
 /* nav */
@@ -35,7 +35,12 @@ nav {
   background-color: rgb(207, 19, 19);
   color: white;
 }
-
+nav h1 .span{
+  color: rgb(207, 19, 19) ;
+}
+nav h1{
+  font-family: "Open Sans", sans-serif;
+}
 nav a {
   position: relative;
   text-decoration: none;
@@ -376,19 +381,9 @@ i {
   color: #555;
   position: relative;
 }
-
-.menuTypes p:first-child {
-  color: rgb(207, 19, 19);
-}
-
-.menuTypes p:first-child::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: rgb(207, 19, 19);
-  left: 0;
-  bottom: -5px;
+.menuTypes p.active {
+  color: red;
+  text-decoration: underline;
 }
 
 .menuContent > div p {
@@ -811,7 +806,7 @@ span {
   justify-content: center;
   align-items: center;
   height: 320px;
-
+  overflow: hidden;
 }
 
 .galleryImages div {
@@ -823,10 +818,8 @@ span {
   width: 260px;
   height: 180px;
   object-fit: cover;
-  border-radius: 12px;
 }
 
-/*  */
 
 /* CONTATC */
 
@@ -975,7 +968,7 @@ footer .topFotter {
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgb(207, 19, 19);
+  border-bottom: 1px solid rgb(207, 206, 206);
 }
 footer .topFotter > div {
   display: flex;
@@ -1027,15 +1020,16 @@ footer .downFooter {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
 }
 
 .mediaModal.active {
   display: flex;
 }
+
 
 .mediaBox {
   position: relative;
@@ -1043,7 +1037,7 @@ footer .downFooter {
   max-height: 90%;
 }
 
-.media-content img{
+.media-content img {
   width: 50vw;
   height: 80vh;
 }
@@ -1053,13 +1047,12 @@ footer .downFooter {
   border-radius: 8px;
 }
 
-.mediaBox .media-close  i{
+.mediaBox .media-close  {
   position: absolute;
-  /* /* top: 10px; */
-  right: -30vw; 
+  right: -30vw;
   width: 20vw;
   font-size: 28px;
-  color: #4f0303;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -1080,5 +1073,96 @@ footer .downFooter {
   right: -13vw;
 }
 
+/** book reserv **/
+.bookReserv .modalB {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.bookContent {
+  background: #fff;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+  animation: fadeUp 0.4s ease;
+}
+
+.bookContent .close {
+  position: absolute;
+  right: 18px;
+  top: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #999;
+  transition: 0.3s;
+}
+
+.bookContent .close:hover {
+  color: red;
+}
+
+.bookContent h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+#bookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fullForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullForm label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.fullForm input,
+.fullForm select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.fullForm input:focus,
+.fullForm select:focus {
+  border-color: red;
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.15);
+}
+
+.submit-btn {
+  margin-top: 15px;
+  padding: 12px;
+  background: red;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #d60000;
+}
 
 
