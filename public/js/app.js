@@ -249,7 +249,7 @@ reservationForm.addEventListener('submit', (e) => {
     numPeople: document.getElementById('peopleNumber').value
   };
 
-  // ** Check for conflict
+
   let conflict = reservations.some(r => 
     r.foodOption === formData.foodOption && 
     ((formData.startTime >= r.startTime && formData.startTime < r.endTime) || 

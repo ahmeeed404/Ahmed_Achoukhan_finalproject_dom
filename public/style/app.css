@@ -1166,3 +1166,193 @@ footer .downFooter {
 }
 
 
+/* *version mobile */
+@media screen and (max-width: 425px) {
+
+  .container {
+    padding: 0 10px;
+  }
+
+  /* nav */
+  nav {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .navBttn {
+    width: 90%;
+  }
+  nav a {
+    margin: 5px 0;
+    display: none;
+  }
+/* hero */
+  .heroSection {
+    flex-direction: column-reverse !important;
+    min-height: auto;
+    padding: 20px 0;
+  }
+  .heroContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .rightHero img {
+    max-width: 90%;
+    height: auto;
+  }
+  .heroBttns {
+
+    gap: 15px;
+  }
+  .heroBttns .leftBttn button,
+  .heroBttns .rightBttn button {
+    width: 40vw !important;
+  }
+
+  /* about */
+  .downAbout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .leftAbout img,
+  .leftContent {
+    width: 100%;
+    height: auto;
+  }
+
+  /* why us */
+ 
+  .whyContent {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  .whyContent  div {
+    width: 100% !important;
+  }
+
+
+  /* states */
+  .statesContent {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* menu */
+  .menuTypes {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .menuImages {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .menuImages img {
+    width: 100% ;
+    height: auto;
+  }
+
+  /* testimonials */
+  .testimonialCard {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .testimonialText,
+  .testimonialImg {
+    width: 100%;
+  }
+  .testimonialImg img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* events */
+  .eventContent {
+    grid-template-rows: 1fr;
+    height: auto;
+  }
+  .eventContent > div {
+    padding: 20px;
+  }
+
+  /* chefs */
+  .rowChef {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* book */
+  .bookWrapper {
+    grid-template-columns: 1fr;
+  }
+  .bookForm {
+    padding: 20px;
+
+  }
+  .formRow{
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* gallery */
+  .galleryImages {
+    flex-direction: column;
+    height: auto;
+  }
+  .galleryImages img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  /* contact */
+  .firstForm,
+  .secondForm {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .firstForm > div,
+  .secondForm > div {
+    width: 100% !important;
+  }
+
+  /* third form */
+  .thirdForm > div:first-child {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .thirdForm > div:first-child input {
+    width: 100% !important;
+  }
+
+  .thirdForm button {
+    width: 100%;
+  }
+
+
+  /* modal media */
+  .media-content img,
+  .media-content iframe {
+    width: 90vw;
+    height: auto;
+  }
+  .mediaBox .media-close {
+    right: 5vw;
+  }
+  .media-prev {
+    left: 5vw;
+  }
+  .media-next {
+    right: 5vw;
+  }
+
+  /* footer */
+  footer .topFotter {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
