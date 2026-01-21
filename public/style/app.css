@@ -26,6 +26,7 @@ nav {
   justify-content: space-between;
   height: 10vh;
   align-items: center;
+
 }
 .navBttn {
   height: 35px;
@@ -123,9 +124,10 @@ a:hover::after {
   border: none;
   color: white;
 }
-.rightBttn i {
+.rightBttn i, button p {
   color: rgb(207, 19, 19);
   font-size: 28px;
+  display: flex;
 }
 
 .topHero {
@@ -881,10 +883,7 @@ span {
   flex-shrink: 0;
 }
 
-.firstForm > div p,
-.secondForm > div p {
-  margin: 0;
-}
+
 
 .firstForm > div p:nth-of-type(1),
 .secondForm > div p:nth-of-type(1) {

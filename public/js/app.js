@@ -10,7 +10,7 @@ let closeBtn = modal.querySelector(".media-close");
 let prevBtn = modal.querySelector(".media-prev");
 let nextBtn = modal.querySelector(".media-next");
 
-let videoLink = "https://youtu.be/Y7f98aduVJ8";
+let videoLink = "https://www.youtube.com/embed/Y7f98aduVJ8?autoplay=1&mute=1&controls=1";
 let currentIndex = -1;
 let isVideo = true;
 
@@ -127,6 +127,9 @@ setInterval(() => {
     showCard();
 }, 4000);
 
+
+
+
 // ** events carousel
 let events = document.querySelectorAll(".eventContent > div");
 let visible = 3;
@@ -180,6 +183,8 @@ setInterval(() => {
     start++; showEvents();
 }, 4000);
 
+
+
 // **carouselof gallery 
 let slides = document.querySelectorAll(".galleryImages div");
 let activeIndex = 2;
@@ -209,14 +214,16 @@ setInterval(() => {
     updateCarousel();
 }, 2500);
 
+
+
+
 // ** book reserve
 let reservationModal = document.getElementById('reservationBook');
 let closeModalBtn = document.querySelector('.bookContent .close');
 let reservationForm = document.getElementById('bookForm'); 
 let bookTableBtn = document.querySelector('.navBttn'); 
 let bookHeroBtn = document.querySelector('.leftBttn');
-
-// ** Array to store reservations
+let bookBttn = document.getElementById('#bookBttn');
 let reservations = [];
 
 bookTableBtn.addEventListener('click', (e) => {
@@ -261,7 +268,6 @@ reservationForm.addEventListener('submit', (e) => {
     alert("This time is already reserved. Please choose a different");
     return; 
   }
-
   // ** Save reservation
   reservations.push(formData);
   console.log('Reservation Data:', formData);
